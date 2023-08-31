@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
 
-// import usersFromServer from './api/users';
-// import categoriesFromServer from './api/categories';
-// import productsFromServer from './api/products';
+import usersFromServer from './api/users';
+import categoriesFromServer from './api/categories';
+import productsFromServer from './api/products';
 
 // const products = productsFromServer.map((product) => {
 //   const category = null; // find by product.categoryId
@@ -29,27 +29,14 @@ export const App = () => (
               All
             </a>
 
-            <a
-              data-cy="FilterUser"
-              href="#/"
-            >
-              User 1
-            </a>
-
-            <a
-              data-cy="FilterUser"
-              href="#/"
-              className="is-active"
-            >
-              User 2
-            </a>
-
-            <a
-              data-cy="FilterUser"
-              href="#/"
-            >
-              User 3
-            </a>
+            {usersFromServer.map(user => (
+              <a
+                data-cy="FilterAllUsers"
+                href="#/"
+              >
+                {user.name}
+              </a>
+            ))}
           </p>
 
           <div className="panel-block">
@@ -86,36 +73,16 @@ export const App = () => (
               All
             </a>
 
-            <a
-              data-cy="Category"
-              className="button mr-2 my-1 is-info"
-              href="#/"
-            >
-              Category 1
-            </a>
+            {categoriesFromServer.map(category => (
+              <a
+                data-cy="Category"
+                className="button mr-2 my-1 is-info"
+                href="#/"
+              >
+                {category.title}
+              </a>
+            ))}
 
-            <a
-              data-cy="Category"
-              className="button mr-2 my-1"
-              href="#/"
-            >
-              Category 2
-            </a>
-
-            <a
-              data-cy="Category"
-              className="button mr-2 my-1 is-info"
-              href="#/"
-            >
-              Category 3
-            </a>
-            <a
-              data-cy="Category"
-              className="button mr-2 my-1"
-              href="#/"
-            >
-              Category 4
-            </a>
           </div>
 
           <div className="panel-block">
@@ -198,7 +165,7 @@ export const App = () => (
               </td>
 
               <td data-cy="ProductName">Milk</td>
-              <td data-cy="ProductCategory">🍺 - Drinks</td>
+              <td data-cy="ProductCategory">/🍺  - Drinks</td>
 
               <td
                 data-cy="ProductUser"
@@ -214,7 +181,7 @@ export const App = () => (
               </td>
 
               <td data-cy="ProductName">Bread</td>
-              <td data-cy="ProductCategory">🍞 - Grocery</td>
+              <td data-cy="ProductCategory"> - Grocery</td>
 
               <td
                 data-cy="ProductUser"
