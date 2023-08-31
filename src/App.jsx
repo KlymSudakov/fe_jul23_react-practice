@@ -3,7 +3,7 @@ import './App.scss';
 
 import usersFromServer from './api/users';
 import categoriesFromServer from './api/categories';
-import productsFromServer from './api/products';
+// import productsFromServer from './api/products';
 
 // const products = productsFromServer.map((product) => {
 //   const category = null; // find by product.categoryId
@@ -165,7 +165,7 @@ export const App = () => (
               </td>
 
               <td data-cy="ProductName">Milk</td>
-              <td data-cy="ProductCategory">/🍺  - Drinks</td>
+              <td data-cy="ProductCategory">/  - Drinks</td>
 
               <td
                 data-cy="ProductUser"
@@ -197,7 +197,7 @@ export const App = () => (
               </td>
 
               <td data-cy="ProductName">iPhone</td>
-              <td data-cy="ProductCategory">💻 - Electronics</td>
+              <td data-cy="ProductCategory"> - Electronics</td>
 
               <td
                 data-cy="ProductUser"
